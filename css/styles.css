@@ -1,0 +1,297 @@
+/* Importar aquí la font */
+
+ @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
+ 
+body{ 
+    font-family: 'Open Sans', sans-serif;
+    background-color: #fbfbfb;
+    font-size: 14px;
+    line-height: 1.2;
+    color:  #0f0f0f;
+}
+
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* Para que el scrolleo en la one page sea suave */
+    scroll-behavior: smooth;
+}
+
+/* Este max-width es para que el contenido no se "estire" demasiado hacia los costados y
+*  el margin: auto; para tenerlo centrado fácilmente ;)
+*/
+
+main {
+    max-width: 1200px;
+    margin: auto;
+  
+}
+
+header{
+    background-color: white;
+    height: 70px;  
+    position: fixed;
+    width: 100%; 
+    top: 0;
+    left: 0;
+
+     /* propiedades para hacer que el header quede fijo */
+    box-shadow: 0 3px 10px -5px #5f5f5f; /* linea de sombra  */
+}
+
+.barra{
+  background-color: #A3BBA3;
+  height: 110px;
+  width: 100%;
+  color: black;
+  text-align: center;
+}
+/*propiedades de las secciones*/
+
+section#inicio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    min-height: 100vh;
+}
+
+section#contacto {
+    justify-content: flex-start;
+}
+
+
+/* Para quitar los puntos a los items de listas */
+ul {
+    list-style: none;
+}
+
+/* Para que los enlaces hereden el color de texto y no tengan subrayado */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+p{
+   margin: 16px 0;
+}
+
+h1{
+    font-size: 36px;
+}
+ 
+h2{
+    font-size: 28px;
+}
+ /*propiedades del logo*/
+ .logo img{
+  height: 70px;
+  margin: 0 20px;
+}
+.logo{
+  display: flex;
+  align-items: center;
+
+}
+
+ /*propiedades del menu principal*/
+ .nav{
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-link{
+  color: black;
+  text-decoration: none;
+}
+
+  
+  .nav-menu{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-right: 20px;
+    background-color: #C4A09A;
+    position: fixed;
+    left: 0;
+    top: 70px;
+    width: 100%;
+    padding: 20px 0;
+
+    height: calc(100% - 70px);
+    overflow-y: auto;
+
+    left: 100%;
+    transition: left 0.3s;
+
+  }
+  
+  .nav-menu-item{
+    line-height: 70px;
+  }
+
+  .nav-menu-link:hover,
+  .nav-menu-link_active{
+    background:none;
+    color: #777474;
+  }
+
+  .nav-toggle{
+    color: black;
+    background: none;
+    border: none;
+    font-size: 30px;
+    padding: 0 20px;
+    line-height: 60px;
+    cursor: pointer;
+    display: block;
+  }
+  
+  .nav-menu_visible{
+    left: 0;
+  }
+
+  .nav-toggle:focus:not(:focus-visible){
+    overflow: none;
+  }
+
+  @media (min-width: 1024px) {
+
+   /*transforma el menu a horizontal*/
+    .nav-menu {
+      position: static;
+      flex-direction: row;
+      background-color: transparent;
+      width: auto;
+      height: auto;
+      padding: 0;
+      top: 0;
+      justify-content: flex-end; /* Alineación a la derecha */
+    }
+    .nav-menu-item{
+      display: inline-block;
+      margin-right: 20px;
+    }
+  
+    .nav-toggle{
+      display: none;
+    }
+ /*cambia algunas propiedades*/
+    h1{
+      font-size: 48px;
+      text-align: left;
+      
+    }
+    h2{
+      font-size: 32px;
+    }
+
+    section#inicio {
+      flex-direction: row;
+    }
+
+    article.sobremi{
+      width: 60%;
+      font-size: 14px;
+      text-align: left;
+      margin: 0 20px;
+    }
+   figure.iconosredes{
+    margin: 32px;
+   }
+   
+  }
+ /* convierte y ajusta el tama;o de la imagen al circulo*/
+figure.fotoprincipal{
+    margin-bottom: 20px ;
+}
+
+figure.fotoprincipal img{
+  border-radius: 50%;
+  width: 400px;
+}
+
+ /*propiedades del articulo de inicio*/
+.sobremi{
+    width: 100%;
+    text-align: center ;
+}
+
+  /*propiedades del articulo de contacto */
+ .hablemos{
+    width: 100%;
+    line-height: 1.5;
+    text-align: center ;
+    padding: 12px 20px;
+    border-radius: 10px;
+    background-color: #F0E3E0;
+}
+
+/*propiedades del iconos de red de contacto */
+ figure.iconosredes{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 30px;
+ }
+
+ figure.iconosredes img {
+    width: 60px;
+}
+
+/*propiedades del boton CV */
+ .boton{
+    background-color: #A3BBA3;
+    color: black;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-size: 20px;
+    display: inline-block;
+ }
+
+ a.boton:hover{
+  background: #F0E3E0;
+  transition:  background-color 0.3s;
+ }
+
+ /*propiedades del pie de pagina */
+ .piedepagina{
+    background-color: black;
+    color: #fbfbfb;
+    padding: 40px;
+    text-align: center;
+    height: 90px;
+    width: 100%;
+ }
+
+ /* Sección Diseño, Desarrollo y Creador */
+  #infogeneral {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 50px;
+  }
+   /* Sección de los articulos de diseño , front ent y creador de contenido */
+  .generalinfo {
+    flex: 0 0 300px;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    background-color: #f1f1f1;
+  }
+  
+  .generalinfo img {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+  } 
+
+ p#parrafoinfo{
+  font-weight: bold;
+    color: black;
+ }
