@@ -28,7 +28,6 @@ body{
 main {
     max-width: 1200px;
     margin: auto;
-  
 }
 
 header{
@@ -42,16 +41,14 @@ header{
      /* propiedades para hacer que el header quede fijo */
     box-shadow: 0 3px 10px -5px #5f5f5f; /* linea de sombra  */
 }
-
+/* barra de color */
 .barra{
   background-color: #A3BBA3;
   height: 110px;
   width: 100%;
-  color: black;
-  text-align: center;
 }
-/*propiedades de las secciones*/
 
+/*propiedades de las secciones*/
 section#inicio {
     display: flex;
     flex-direction: column;
@@ -87,6 +84,7 @@ h1{
 h2{
     font-size: 28px;
 }
+
  /*propiedades del logo*/
  .logo img{
   height: 70px;
@@ -109,78 +107,76 @@ h2{
   text-decoration: none;
 }
 
+.nav-menu{
+ flex-direction: column;
+ align-items: center;
+ text-align: center;
+ margin-right: 20px;
+ background-color: #C4A09A;
+ position: fixed;
+ left: 0;
+ top: 70px;
+ width: 100%;
+ padding: 20px 0;
+ height: calc(100% - 70px);
+ overflow-y: auto;
+
+ left: 100%;
+ transition: left 0.3s;
+}
   
-  .nav-menu{
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-right: 20px;
-    background-color: #C4A09A;
-    position: fixed;
-    left: 0;
-    top: 70px;
-    width: 100%;
-    padding: 20px 0;
+.nav-menu-item{
+   line-height: 70px;
+}
+.nav-menu-link:hover,
+.nav-menu-link_active{
+ background:none;
+ color: #777474;
+}
 
-    height: calc(100% - 70px);
-    overflow-y: auto;
+.nav-toggle{
+ color: black;
+ background: none;
+ border: none;
+ font-size: 30px;
+ padding: 0 20px;
+ line-height: 60px;
+ cursor: pointer;
+ display: block;
+}
 
-    left: 100%;
-    transition: left 0.3s;
+.nav-menu_visible{
+ left: 0;
+}
 
+.nav-toggle:focus:not(:focus-visible){
+  overflow: none;
+ }
+
+
+/**/
+@media (min-width: 1024px) {
+/*transforma el menu a horizontal*/
+  .nav-menu {
+    position: static;
+    flex-direction: row;
+    background-color: transparent;
+    width: auto;
+    height: auto;
+    padding: 0;
+    top: 0;
+    justify-content: flex-end; /* Alineación a la derecha */
   }
-  
   .nav-menu-item{
-    line-height: 70px;
+    display: inline-block;
+    margin-right: 20px;
   }
-
-  .nav-menu-link:hover,
-  .nav-menu-link_active{
-    background:none;
-    color: #777474;
-  }
-
+  
   .nav-toggle{
-    color: black;
-    background: none;
-    border: none;
-    font-size: 30px;
-    padding: 0 20px;
-    line-height: 60px;
-    cursor: pointer;
-    display: block;
+    display: none;
   }
-  
-  .nav-menu_visible{
-    left: 0;
-  }
-
-  .nav-toggle:focus:not(:focus-visible){
-    overflow: none;
-  }
-
-  @media (min-width: 1024px) {
-
-   /*transforma el menu a horizontal*/
-    .nav-menu {
-      position: static;
-      flex-direction: row;
-      background-color: transparent;
-      width: auto;
-      height: auto;
-      padding: 0;
-      top: 0;
-      justify-content: flex-end; /* Alineación a la derecha */
-    }
-    .nav-menu-item{
-      display: inline-block;
-      margin-right: 20px;
-    }
-  
-    .nav-toggle{
-      display: none;
-    }
- /*cambia algunas propiedades*/
+ 
+   /*cambia algunas propiedades*/
     h1{
       font-size: 48px;
       text-align: left;
@@ -200,14 +196,16 @@ h2{
       text-align: left;
       margin: 0 20px;
     }
-   figure.iconosredes{
-    margin: 32px;
-   }
+    figure.iconosredes{
+      margin: 32px;
+    }
    
   }
- /* convierte y ajusta el tama;o de la imagen al circulo*/
+
+
+/* convierte y ajusta el tama;o de la imagen al circulo*/
 figure.fotoprincipal{
-    margin-bottom: 20px ;
+  margin-bottom: 20px ;
 }
 
 figure.fotoprincipal img{
@@ -253,7 +251,7 @@ figure.fotoprincipal img{
     font-size: 20px;
     display: inline-block;
  }
-
+/*le da un color al pasar el cursor */
  a.boton:hover{
   background: #F0E3E0;
   transition:  background-color 0.3s;
@@ -268,30 +266,29 @@ figure.fotoprincipal img{
     height: 90px;
     width: 100%;
  }
+/* Sección de los articulos de diseño , front ent y creador de contenido */
+section#infogeneral {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 
- /* Sección Diseño, Desarrollo y Creador */
-  #infogeneral {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-bottom: 50px;
-  }
-   /* Sección de los articulos de diseño , front ent y creador de contenido */
-  .generalinfo {
-    flex: 0 0 300px;
-    margin: 10px;
-    padding: 20px;
-    text-align: center;
-    background-color: #f1f1f1;
-  }
+.generalinfo {
+  flex: 0 0 300px;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
   
-  .generalinfo img {
-    max-width: 100px;
-    height: auto;
-    margin-bottom: 10px;
-  } 
+.generalinfo img {
+  max-width: 50px;
+  height: auto;
+  margin-bottom: 10px;
+} 
 
- p#parrafoinfo{
+/* coloca en negrita los titulos que estan dentro del parrafo  */
+p#parrafoinfo{
   font-weight: bold;
-    color: black;
- }
+  color: black;
+}
